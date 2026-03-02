@@ -1,0 +1,12 @@
+{
+  "name": "glina-workshop",
+  "version": "1.0.0",
+  "description": "Творческая Мастерская - интернет-магазин свечей ручной работы",
+  "scripts": {
+    "build": "echo 'No build needed - static HTML' && exit 0",
+    "start": "php -S localhost:8000"
+  },
+  "keywords": ["candles", "handmade", "shop"],
+  "author": "",
+  "license": "MIT"
+}
