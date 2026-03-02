@@ -32,6 +32,7 @@
             background-color: var(--cream);
             color: var(--charcoal);
             line-height: 1.6;
+            font-size: 15px;
         }
 
         h1, h2, h3, h4 {
@@ -81,7 +82,7 @@
         }
 
         .logo-text {
-            font-size: 1.25rem;
+            font-size: 1.08rem;
             font-weight: 600;
         }
 
@@ -94,7 +95,7 @@
         .nav-link {
             text-decoration: none;
             color: var(--charcoal);
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             transition: color 0.3s;
             cursor: pointer;
         }
@@ -106,7 +107,7 @@
         .cart-btn {
             background: var(--rose-blush);
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: 0.55rem 1rem;
             border-radius: 50px;
             display: flex;
             align-items: center;
@@ -114,7 +115,7 @@
             cursor: pointer;
             transition: all 0.3s;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: var(--charcoal);
         }
 
@@ -127,18 +128,20 @@
             background: var(--charcoal);
             color: white;
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
         }
 
         /* Hero Section */
         .hero {
-            height: 85vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23C4A894" width="1200" height="800"/></svg>');
+            height: 72vh;
+            background:
+                linear-gradient(rgba(35, 27, 22, 0.48), rgba(35, 27, 22, 0.4)),
+                url('./banner.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -159,38 +162,38 @@
             display: inline-block;
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
-            padding: 0.5rem 1.5rem;
+            padding: 0.35rem 1rem;
             border-radius: 50px;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-            letter-spacing: 2px;
+            margin-bottom: 1.25rem;
+            font-size: 0.72rem;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 0.9rem;
             line-height: 1.2;
             text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.45rem;
             opacity: 0.95;
         }
 
         .hero-desc {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             opacity: 0.9;
-            margin-bottom: 3rem;
+            margin-bottom: 1.8rem;
         }
 
         .hero-btn {
             background: var(--rose-blush);
             border: none;
-            padding: 1.25rem 3rem;
-            font-size: 1.25rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
             border-radius: 50px;
             cursor: pointer;
             font-family: 'Cormorant Garamond', serif;
@@ -218,63 +221,69 @@
         /* Filters Section */
         .filters-section {
             background: var(--warm-white);
-            padding: 2rem 0;
-            margin: 3rem 0;
-            border-radius: 20px;
+            padding: 1.25rem 0;
+            margin: 1.8rem 0;
+            border-radius: 14px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
         .filters {
             display: flex;
-            gap: 1rem;
+            gap: 0.65rem;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
-        .filter-btn {
-            padding: 0.75rem 2rem;
-            border: 2px solid var(--dusty-rose);
-            background: transparent;
-            border-radius: 50px;
-            cursor: pointer;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            color: var(--charcoal);
+        .filter-group {
+            margin-bottom: 1rem;
         }
 
-        .filter-btn.active {
-            background: var(--dusty-rose);
-            color: white;
+        .filter-title {
+            margin-bottom: 0.45rem;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .filter-btn:hover {
-            background: var(--rose-blush);
-            border-color: var(--rose-blush);
+        .filter-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.45rem;
+            background: #fff;
+            border: 1px solid #e7ddd2;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            line-height: 1;
+        }
+
+        .filter-checkbox {
+            width: 13px;
+            height: 13px;
+            accent-color: var(--dusty-rose);
         }
 
         /* Products Grid */
         .products-section {
-            padding: 4rem 0;
+            padding: 2rem 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
+            font-size: 1.9rem;
+            margin-bottom: 1.4rem;
             color: var(--charcoal);
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
 
         .product-card {
             background: var(--warm-white);
-            border-radius: 20px;
+            border-radius: 14px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.4s;
@@ -282,42 +291,42 @@
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
 
         .product-image {
             width: 100%;
-            height: 320px;
+            height: 230px;
             object-fit: cover;
             background: linear-gradient(135deg, var(--rose-blush), var(--sage));
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 0.95rem;
         }
 
         .product-badge {
             display: inline-block;
             background: var(--sage);
             color: white;
-            padding: 0.3rem 1rem;
+            padding: 0.2rem 0.6rem;
             border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.72rem;
+            margin-bottom: 0.45rem;
         }
 
         .product-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
             color: var(--charcoal);
         }
 
         .product-description {
             color: #666;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            font-size: 0.9rem;
+            margin-bottom: 0.7rem;
+            line-height: 1.35;
         }
 
         .product-footer {
@@ -327,7 +336,7 @@
         }
 
         .product-price {
-            font-size: 1.75rem;
+            font-size: 1.25rem;
             font-weight: 600;
             color: var(--terracotta);
         }
@@ -335,11 +344,11 @@
         .add-to-cart-btn {
             background: var(--rose-blush);
             border: none;
-            padding: 0.75rem 1.5rem;
+            padding: 0.45rem 0.85rem;
             border-radius: 50px;
             cursor: pointer;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1rem;
+            font-size: 0.85rem;
             transition: all 0.3s;
             color: var(--charcoal);
         }
@@ -396,22 +405,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem;
+            padding: 1.1rem 1.2rem;
             border-bottom: 2px solid var(--cream);
         }
 
         .modal-title {
-            font-size: 2rem;
+            font-size: 1.35rem;
         }
 
         .close-btn {
             background: none;
             border: none;
-            font-size: 2rem;
+            font-size: 1.45rem;
             cursor: pointer;
             color: var(--charcoal);
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -424,7 +433,7 @@
         }
 
         .modal-body {
-            padding: 2rem;
+            padding: 1rem 1.2rem;
         }
 
         /* Cart Styles */
@@ -573,9 +582,9 @@
             background: var(--dusty-rose);
             color: white;
             border: none;
-            padding: 1.25rem;
+            padding: 0.8rem 1rem;
             border-radius: 50px;
-            font-size: 1.25rem;
+            font-size: 1rem;
             cursor: pointer;
             font-family: 'Cormorant Garamond', serif;
             transition: all 0.3s;
@@ -716,11 +725,11 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.1rem;
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 0.95rem;
             }
 
             .products-grid {
@@ -732,12 +741,7 @@
             }
 
             .filters {
-                gap: 0.5rem;
-            }
-
-            .filter-btn {
-                padding: 0.5rem 1rem;
-                font-size: 1rem;
+                gap: 0.45rem;
             }
         }
     </style>
@@ -755,11 +759,12 @@
             const [view, setView] = useState('customer'); // customer or admin
             const [products, setProducts] = useState([]);
             const [cart, setCart] = useState([]);
-            const [selectedCategory, setSelectedCategory] = useState('all');
-            const [selectedHoliday, setSelectedHoliday] = useState('all');
+            const [selectedCategories, setSelectedCategories] = useState([]);
+            const [selectedHolidays, setSelectedHolidays] = useState([]);
             const [showCart, setShowCart] = useState(false);
             const [showOrderForm, setShowOrderForm] = useState(false);
             const [loading, setLoading] = useState(true);
+            const adminEnabled = new URLSearchParams(window.location.search).get('admin') === '1';
 
             useEffect(() => {
                 fetchProducts();
@@ -831,25 +836,25 @@
             };
 
             const filteredProducts = products.filter(product => {
-                const categoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
-                const holidayMatch = selectedHoliday === 'all' || product.holiday === selectedHoliday;
+                const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(product.category);
+                const holidayMatch = selectedHolidays.length === 0 || selectedHolidays.includes(product.holiday);
                 return categoryMatch && holidayMatch;
             });
 
-            const categories = ['all', ...new Set(products.map(p => p.category))];
-            const holidays = ['all', ...new Set(products.map(p => p.holiday))];
+            const categories = [...new Set(products.map(p => p.category).filter(Boolean))];
+            const holidays = [...new Set(products.map(p => p.holiday).filter(Boolean))];
 
             return (
                 <div>
-                    {view === 'customer' ? (
+                    {!adminEnabled || view === 'customer' ? (
                         <CustomerView
                             products={filteredProducts}
                             categories={categories}
                             holidays={holidays}
-                            selectedCategory={selectedCategory}
-                            selectedHoliday={selectedHoliday}
-                            setSelectedCategory={setSelectedCategory}
-                            setSelectedHoliday={setSelectedHoliday}
+                            selectedCategories={selectedCategories}
+                            selectedHolidays={selectedHolidays}
+                            setSelectedCategories={setSelectedCategories}
+                            setSelectedHolidays={setSelectedHolidays}
                             cart={cart}
                             showCart={showCart}
                             setShowCart={setShowCart}
@@ -860,6 +865,7 @@
                             removeFromCart={removeFromCart}
                             getTotalPrice={getTotalPrice}
                             setView={setView}
+                            adminEnabled={adminEnabled}
                             loading={loading}
                         />
                     ) : (
@@ -877,10 +883,10 @@
             products,
             categories,
             holidays,
-            selectedCategory,
-            selectedHoliday,
-            setSelectedCategory,
-            setSelectedHoliday,
+            selectedCategories,
+            selectedHolidays,
+            setSelectedCategories,
+            setSelectedHolidays,
             cart,
             showCart,
             setShowCart,
@@ -891,10 +897,15 @@
             removeFromCart,
             getTotalPrice,
             setView,
+            adminEnabled,
             loading
         }) {
             const scrollToCatalog = () => {
                 document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' });
+            };
+
+            const toggleInList = (value, list, setter) => {
+                setter(list.includes(value) ? list.filter(item => item !== value) : [...list, value]);
             };
 
             return (
@@ -908,7 +919,9 @@
                                 </a>
                                 <nav className="header-nav">
                                     <a className="nav-link" onClick={scrollToCatalog}>Каталог</a>
-                                    <a className="nav-link" onClick={() => setView('admin')}>Админ</a>
+                                    {adminEnabled && (
+                                        <a className="nav-link" onClick={() => setView('admin')}>Админ</a>
+                                    )}
                                     <button className="cart-btn" onClick={() => setShowCart(true)}>
                                         🛒 Корзина
                                         {cart.length > 0 && (
@@ -934,38 +947,38 @@
 
                     <div className="container">
                         <section id="catalog" className="filters-section">
-                            <h3 style={{textAlign: 'center', marginBottom: '1.5rem', fontSize: '1.5rem'}}>
+                            <h3 style={{textAlign: 'left', marginBottom: '0.9rem', fontSize: '1.15rem'}}>
                                 Фильтры
                             </h3>
-                            <div style={{marginBottom: '1.5rem'}}>
-                                <p style={{textAlign: 'center', marginBottom: '0.75rem', fontWeight: '600'}}>
-                                    Категория:
-                                </p>
+                            <div className="filter-group">
+                                <p className="filter-title">Категория</p>
                                 <div className="filters">
                                     {categories.map(cat => (
-                                        <button
-                                            key={cat}
-                                            className={`filter-btn ${selectedCategory === cat ? 'active' : ''}`}
-                                            onClick={() => setSelectedCategory(cat)}
-                                        >
-                                            {cat === 'all' ? 'Все' : cat}
-                                        </button>
+                                        <label key={cat} className="filter-option">
+                                            <input
+                                                type="checkbox"
+                                                className="filter-checkbox"
+                                                checked={selectedCategories.includes(cat)}
+                                                onChange={() => toggleInList(cat, selectedCategories, setSelectedCategories)}
+                                            />
+                                            <span>{cat}</span>
+                                        </label>
                                     ))}
                                 </div>
                             </div>
-                            <div>
-                                <p style={{textAlign: 'center', marginBottom: '0.75rem', fontWeight: '600'}}>
-                                    Праздник:
-                                </p>
+                            <div className="filter-group">
+                                <p className="filter-title">Праздник</p>
                                 <div className="filters">
                                     {holidays.map(holiday => (
-                                        <button
-                                            key={holiday}
-                                            className={`filter-btn ${selectedHoliday === holiday ? 'active' : ''}`}
-                                            onClick={() => setSelectedHoliday(holiday)}
-                                        >
-                                            {holiday === 'all' ? 'Все' : holiday}
-                                        </button>
+                                        <label key={holiday} className="filter-option">
+                                            <input
+                                                type="checkbox"
+                                                className="filter-checkbox"
+                                                checked={selectedHolidays.includes(holiday)}
+                                                onChange={() => toggleInList(holiday, selectedHolidays, setSelectedHolidays)}
+                                            />
+                                            <span>{holiday}</span>
+                                        </label>
                                     ))}
                                 </div>
                             </div>
