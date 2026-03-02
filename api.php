@@ -15,13 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 // ============================================
 // Set USE_MYSQL to true to use MySQL database
 // Set to false to use JSON files
-define('USE_MYSQL', false);
+define('USE_MYSQL', true);
 
 // MySQL Configuration (only used if USE_MYSQL is true)
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'workshop_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', '249a5b3670093c61275d8dc4.twc1.net');
+define('DB_PORT', '3306');
+define('DB_NAME', 'default_db');
+define('DB_USER', 'gen_user');
+define('DB_PASS', 'PFNdQI1&HW>)s,');
 define('DB_CHARSET', 'utf8mb4');
 
 // JSON Files Configuration (only used if USE_MYSQL is false)
@@ -37,7 +38,7 @@ $db = null;
 
 if (USE_MYSQL) {
     try {
-        $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+        $dsn = "mysql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
