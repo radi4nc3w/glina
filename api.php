@@ -27,6 +27,8 @@ define('DB_CHARSET', 'utf8mb4');
 // JSON Files Configuration (only used if USE_MYSQL is false)
 define('DB_FILE', 'database.json');
 define('ORDERS_FILE', 'orders.json');
+define('UPLOAD_DIR', __DIR__ . '/uploads');
+define('MAX_UPLOAD_SIZE', 5 * 1024 * 1024); // 5 MB
 
 // ============================================
 // DATABASE CONNECTION
@@ -129,6 +131,58 @@ function generateId($items) {
     }
     $maxId = max(array_column($items, 'id'));
     return $maxId + 1;
+}
+
+function ensureUploadDir() {
+    if (!is_dir(UPLOAD_DIR)) {
+        mkdir(UPLOAD_DIR, 0755, true);
+    }
+}
+
+function getUploadedImageUrl($file) {
+    if (!isset($file) || !is_array($file)) {
+        throw new Exception('Файл не передан');
+    }
+
+    if (!isset($file['error']) || $file['error'] !== UPLOAD_ERR_OK) {
+        throw new Exception('Ошибка загрузки файла');
+    }
+
+    if (($file['size'] ?? 0) > MAX_UPLOAD_SIZE) {
+        throw new Exception('Файл слишком большой (максимум 5MB)');
+    }
+
+    $tmpName = $file['tmp_name'] ?? '';
+    if ($tmpName === '' || !is_uploaded_file($tmpName)) {
+        throw new Exception('Некорректный загруженный файл');
+    }
+
+    $finfo = finfo_open(FILEINFO_MIME_TYPE);
+    $mimeType = finfo_file($finfo, $tmpName);
+    finfo_close($finfo);
+
+    $allowed = [
+        'image/jpeg' => 'jpg',
+        'image/png' => 'png',
+        'image/webp' => 'webp',
+        'image/gif' => 'gif'
+    ];
+
+    if (!isset($allowed[$mimeType])) {
+        throw new Exception('Поддерживаются только JPG, PNG, WEBP, GIF');
+    }
+
+    ensureUploadDir();
+
+    $ext = $allowed[$mimeType];
+    $fileName = uniqid('product_', true) . '.' . $ext;
+    $targetPath = UPLOAD_DIR . '/' . $fileName;
+
+    if (!move_uploaded_file($tmpName, $targetPath)) {
+        throw new Exception('Не удалось сохранить файл');
+    }
+
+    return './uploads/' . $fileName;
 }
 
 // ============================================
@@ -487,6 +541,17 @@ try {
             // mail($order['email'], 'Заказ получен', '...');
             
             echo json_encode(['success' => true, 'order' => $order], JSON_UNESCAPED_UNICODE);
+            break;
+
+        case 'uploadImage':
+            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+                http_response_code(405);
+                echo json_encode(['error' => 'Method Not Allowed'], JSON_UNESCAPED_UNICODE);
+                break;
+            }
+
+            $imageUrl = getUploadedImageUrl($_FILES['image'] ?? null);
+            echo json_encode(['success' => true, 'image' => $imageUrl], JSON_UNESCAPED_UNICODE);
             break;
 
         case 'getOrders':
